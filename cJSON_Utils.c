@@ -1365,6 +1365,7 @@ static cJSON *merge_patch(cJSON *target, const cJSON * const patch, const cJSON_
             replacement = merge_patch(replace_me, patch_child, case_sensitive);
             if (replacement == NULL)
             {
+                cJSON_Delete(target);
                 return NULL;
             }
 
